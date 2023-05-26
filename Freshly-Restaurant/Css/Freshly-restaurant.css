@@ -1,0 +1,664 @@
+                                /* Reset ou Généralité du site */
+
+@import url("font-face.css"); /*  liaison avec le fichier fontface */
+@import url("normalize.css"); /* Liaison avec le fichier normalize */
+@import url("../instructions/slick/slick.css"); /* Liaison avec le fichier css du plugin */
+@import url("../instructions/slick/slick-theme.css"); /* Liaison avec le fichier css du thème par default */
+
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html{    font-size: 62.5%;  /* Initialiser la taille des fonts a 1rem = 10px */}
+
+/* Déclaration des variables css */
+
+:root{
+    --font-size-default:1.8rem;
+    --font-size-titre: 3rem;
+    --font-size-sous-rubrique: 2.5rem;
+    --font-size-titre-menus: 2rem;
+    --font-size-prix-menus: 5rem;
+    --font-size-sous-menus: 1.5rem;
+    --font-size-texte: 1.6rem;
+    --clr-principal: #4c4343;
+    --clr-secondaire: #ebe3db;
+    --clr-textiaire: #950000;
+    --font-default: "athiti";
+    --font-titre: "merienda";
+}
+
+.header{    background-image: linear-gradient(#ebe3db, white, white);}
+
+/* Insertion des pictos avant et après les titres */
+
+h1::before,
+h1::after,
+h2::before,
+h2::after,
+h3::before,
+h3::after,
+.logo .site-title::before,
+.logo .site-title::after{
+    font-family: "font awesome 5 free";
+    content: "\f005";
+    color: var(--clr-textiaire);
+    font-size: 1rem;
+    padding-inline: 1rem;
+}
+
+h1,
+h2,
+h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-titre);
+}
+
+img{    max-width: 100%;  /* Initialisation de la taille des images pour la responsivité */}
+
+/* Initialisation des lien */
+.header a,
+.body a,
+.more-us a{    text-decoration: none;}
+/* Initialisation des listes */
+.nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+/* Initialisation des parametres par défault pour le site */
+.body{
+    font-family: "athiti";
+    font-size: var(--font-size-default);
+    line-height: 1.5;
+}
+
+                                   /* Header */
+
+/* Placement du logo en mobile */
+.nav .logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Réduction de la taille du logo en mobile */
+.logo img{    width: 20%;}
+
+/* Placement du titre du site apres les slides */
+.nav .site-title{
+    font-weight: 600;
+    font-size: var(--font-size-titre);
+    color: var(--clr-principal);
+    display: flex;
+    align-items: center;
+}
+
+/* Alignement de la barre de navigation */
+
+.nav .toolbar{
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* Initialisation de la section home active */
+
+.nav .active{
+    background-color: var(--clr-principal);
+    color: var(--clr-secondaire);
+}
+
+/* Mise en place du hover au niveau de la barre de navigation */
+
+.toolbar a:hover,
+.toolbar a:active,
+.toolbar a:focus{
+    background-color: var(--clr-textiaire);
+    color: white;
+}
+
+/* Paramétrage des liens de la barre de navigation */
+
+.toolbar a{
+    display: block;
+    background-color: var(--clr-secondaire);
+    border-bottom: solid 0.5px var(--clr-principal);
+    padding: 0.5rem 1rem;
+    color: var(--clr-principal);
+    font-weight: 700;
+    transition: all 2s ease-in-out;
+}
+
+
+                                   /* Main */
+
+/* Paramétrage du main */
+
+.main{    padding: 2rem;}
+
+/* Paramétrage du titre de la premiere section de presentation du restaurant */
+
+.description h1{
+    font-family: var(--font-titre);
+    font-weight: 900;
+    font-size: var(--font-size-titre);
+    color: var(--clr-principal);
+    text-align: center;
+}
+
+/* Paramétrage des paragraphes de la description de la page home et des paragraphes de la pages about  */
+
+.description p,
+.about p,
+.private p{    font-weight: 600;}
+
+/* Paramétrage de la section des menus */
+
+.special-menu h1{    font-size: var(--font-size-sous-rubrique);}
+
+/* Initialisation du background de tous les menus */
+.menu{
+    background-color: var(--clr-secondaire);
+    padding-bottom: 3rem;
+    border-radius: 2rem;
+}
+
+/* Titre des menus */
+.menu h2{
+    padding-top: 1.5rem;
+    font-size: var(--font-size-titre-menus);
+}
+
+/* Pictos avant chaque description du menu */
+.menu .des-menu::before{
+    font-family: "font awesome 5 free";
+    content: "\f005";
+    color: var(--clr-textiaire);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Description du menu */
+.menu .des-menu{
+    padding-left: 2rem;
+    border-bottom: 2px dashed var(--clr-principal);
+    padding-bottom: 1rem;
+    margin-top: 0;
+    font-weight: 600;
+    font-size: var(--font-size-titre-menus);
+}
+
+/* Les liens read more des menus */
+.menu a{
+    display: flex;
+    background-color: var(--clr-principal);
+    color: var(--clr-secondaire);
+    justify-content: center;
+    align-items: center;
+    padding-block: 1rem;
+    margin-inline: 2rem;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: all 3s ease-out;
+    border-radius: 1rem;
+}
+
+.menu a:hover{
+    background-color: var(--clr-textiaire);
+    color: white;
+}
+
+/* Fork svg size */
+.svg{    width: 2rem;}
+
+.svg-menu{    width: 4rem;}
+
+.pos-relative{
+    position: relative;
+    margin: 0;
+    left: 0;
+    right: 0;
+}
+
+.survol{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(76, 67, 67, .9);
+}
+
+.tarif{
+    color: var(--clr-secondaire);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: solid 5px var(--clr-secondaire);
+    border-radius: 1rem;
+    padding-block: 6rem;
+    width: 90%;
+    line-height: 0;
+    font-weight: 500;
+}
+
+.pos-relative + img{    display: block;}
+
+.prix{    font-size: var(--font-size-prix-menus);}
+
+.pos-relative:hover .survol{
+    cursor: pointer;
+    opacity: 1;    
+}
+.pos-relative:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.details .buton,
+.details button,
+.details p{    text-align: center;}
+.details p{
+    font-size: 1rem;
+    font-weight: 800;
+}
+.details button{
+    text-transform: uppercase;
+    background-color: var(--clr-secondaire);
+    font-weight: 600;
+    color: black;
+    border: none;
+    padding-inline: 1.5rem;
+    padding-block: 0.5rem;
+    margin-inline: 1rem;
+    margin-block: 2rem;
+    transition: all 2s ease-in-out;
+    font-size: 1.6rem;
+}
+.details button:hover,
+.details button:focus,
+.details button:active{
+    cursor: pointer;
+    transform: scale(1.5, 1.5);
+    background-color: var(--clr-textiaire);
+    color: var(--clr-secondaire);
+    border-radius: 0.5rem;
+}
+.menu-p{
+    font-size: 100rem;
+    font-weight: 900;
+}
+.parent-menu{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: repeat(5, 1fr);
+    background-color: var(--clr-secondaire);
+    padding-block: 2rem;
+    justify-items: center;
+}
+.parent-menu .solo{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    width: 50%;
+}
+.parent-menu .item{    padding: 0.5rem;}
+.dessert .dessert-pic,
+.coktails .coktails-pic{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    padding-block: 1rem;
+    background-color: var(--clr-secondaire);    
+}
+.dessert-pic img,
+.coktails-pic img{
+    padding-inline: 0.5rem;
+    padding-block: 1rem;
+}
+.dessert-pic .cup,
+.coktails-pic .bellini{
+    grid-column-start: -3;
+    grid-column-end: -1;
+    width: 50%;
+}
+
+.contact p{
+    text-align: center;
+    font-weight: 500;
+}
+
+.contact h2 + p + p{    font-style: italic;}
+
+.reservation legend,
+.details legend,
+.request legend,
+.req-label{
+    font-family: var(--font-titre);
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+.contact label{    font-weight: 600;}
+.reservation,
+.details,
+.request{
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+.contact .content::before,
+.contact span:before{
+    font-family: "font awesome 5 free";
+    content: "\f005";
+    color: var(--clr-textiaire);
+    font-size: 0.75rem;
+    padding-block: 0.5rem;
+    font-weight: bold;
+    border-bottom: dotted 1px var(--clr-textiaire);
+}
+.contact label{    margin-bottom: 1rem;}
+
+.contact input,
+.contact textarea{
+    margin-left: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.contact form{
+    background-color: var(--clr-secondaire);
+    padding-block: 2rem;
+}
+
+
+.contact .submit-buton{
+    display: flex;
+    justify-content: center;
+    
+}
+.submit-buton button{
+    background-color: var(--clr-principal);
+    color: var(--clr-secondaire);
+    text-transform: uppercase;
+    padding-block: 1rem;
+    padding-inline: 10rem;
+    border: 0;
+    border-radius: 1rem;
+    font-weight: 600;
+    transition: all 2s ease-in;
+}
+
+.submit-buton button:hover,
+.submit-buton button:active,
+.submit-buton button:focus{
+    cursor: pointer;
+    background-color: var(--clr-textiaire);
+    box-shadow: 5px 5px 4px var(--clr-principal);
+}
+
+.contact .move-marg{    margin-left: 1rem;}
+
+                            /* Footer */
+
+/* Initialize all footer text */
+.footer{
+    text-align: center;
+}
+
+/* Part about the contact and open hours of the restaurant */
+.footer .more-us{    
+    background-image: url("../instructions/ressources/images/footer-bg.jpg");    
+    color: var(--clr-secondaire);
+    padding-block: 2rem;
+}
+
+/* All title of the about part */
+.more-us h4{
+    border-bottom: 1px dashed var(--clr-secondaire);
+    padding-bottom: 0.5rem;
+    margin-inline: 1.5rem;
+}
+.more-us a{
+    color: var(--clr-secondaire);
+}
+
+/* Social network pictos */
+.more-us .fa-brands{
+    color: var(--clr-secondaire);
+    font-size: 2rem;
+    padding-inline: 1rem;
+}
+
+/* Align the openning hours text */
+.more-us .hours{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+}
+
+/* Align all the contact text */
+.more-us .addres{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+}
+
+/* Align the addres part of contact text */
+.more-us .addres address{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.more-us .social{    padding-top: 1rem;}
+
+/* 3wa copyright part */
+.footer .copyright{  
+    background-color: #2d2d2d;
+    padding-block: 2rem;
+}
+
+.footer .copyright img{    width: 9rem;}
+
+/* copyright part link */
+.copyright a{
+    text-decoration: underline;
+    color: white;
+}
+
+/* Color of  */
+.copyright{
+    color: white;
+    background-color: #272525;
+}
+
+@media (min-width:780px) and (max-width:979px) {
+    .nav .toolbar{
+        display: flex;
+        justify-content: space-around;
+        background-color: var(--clr-secondaire);
+    }
+    .toolbar a{        border: none;}
+    .tarif{        padding-block: 3rem;}
+    .description h1{        padding-top: 3rem;}
+    .footer .more-us{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10rem;
+    }
+    .more-us section{        width: 60rem;}
+    .private .dining{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    
+         /* Page menu */
+    .parent-menu{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: repeat(3, 1fr);
+    }
+    .parent-menu .solo{
+        grid-column-start: -2;
+        grid-column-end: -1;
+        /* grid-row-start: ;
+        grid-row-end: ; */
+        width: 100%;
+    }
+    .dessert .dessert-pic,
+    .coktails .coktails-pic{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .dessert-pic .cup,
+    .coktails-pic .bellini{
+        grid-column-start: -2;
+        grid-column-end: -1;
+        width: 100%;
+    }
+    .dessert p,
+    .coktails p{
+        font-size: 1.6rem;
+        font-weight: 500;
+        text-align: center;
+    }
+    .contact .information{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .contact input{        flex-basis: 100%;}
+    .contact .information .reservation{        width: 45vw;}
+    .contact .information .details{        width: 45vw;}
+}
+
+@media (min-width:980px) {
+    .header,
+    .main{
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .nav ul{
+        display: flex;
+        flex-direction: row;
+        margin-inline: 2rem;
+        justify-content: center;
+    }
+    .nav .toolbar{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 3rem;
+    }
+    .nav .logo{
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+    }
+    .toolbar a{        border: none;    }
+    .description h1{        padding-block: 3rem;    }
+    .description + p{        margin-top: 0;    }
+    .after-heros{
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 1rem;
+        padding-bottom: 5rem;
+    }
+    .after-heros img{        width: 45%;    }
+    .carte-menu{
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+    .more-us{
+        display: flex;
+        justify-content: center;
+        gap: 6rem;
+    }
+    .more-us section{        width: 40rem;    }
+    .private .dining{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    .video{        text-align: center;    }
+
+         /* Page menu */
+    .parent-menu{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: repeat(3, 1fr);
+    }
+    .parent-menu .solo{
+        grid-column-start: -2;
+        grid-column-end: -1;
+        /* grid-row-start: ;
+        grid-row-end: ; */
+        width: 100%;
+    }
+    .dessert .dessert-pic,
+    .coktails .coktails-pic{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .dessert-pic .cup,
+    .coktails-pic .bellini{
+        grid-column-start: -2;
+        grid-column-end: -1;
+        width: 100%;
+    }
+    .dessert p,
+    .coktails p{
+        font-size: 1.6rem;
+        font-weight: 500;
+        text-align: center;
+    }
+    .contact .information{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .contact input{        flex-basis: 100%;    }
+    .contact .information .reservation{        width: 45vw;    }
+    .contact .information .details{        width: 45vw;    }
+
+}
+
+
+                         /* Start the stylesheet of the About page  */
+.video video{    max-width: 100%;}
+.dining{
+    background-color: var(--clr-secondaire);
+    padding-block: 2rem;
+    padding-inline: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dining figure{
+    margin: 0;
+}
+
+.dining figcaption{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+

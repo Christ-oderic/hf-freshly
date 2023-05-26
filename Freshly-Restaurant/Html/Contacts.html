@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="Fr-fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Intégration du favicon -->
+    <link rel="shortcut icon" href="../instructions/ressources/images/favicon.png" type="image/x-icon">
+    <!-- Intégration du kits awesome -->
+    <script src="https://kit.fontawesome.com/c632130ef9.js" crossorigin="anonymous"></script>
+    <!-- Importation du fichier jQuerry pour les plugins -->
+    <script src="../instructions/jquerry-3.7.0.min.js"></script>
+    <!-- Importation du fichier style du site -->
+    <link rel="stylesheet" href="../Css/Freshly-restaurant.css">
+    <title> FRESHLY RESTAURANT / Menus </title>
+</head>
+<body class="body">
+    <header class="header">
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a href="Home.html" class="logo">
+                        <img src="../instructions/ressources/images/logo.png" alt=""> 
+                        <spam class="site-title">FRESHLY RESTAURANT</spam> 
+                    </a>
+                </li>
+                <div class="toolbar">
+                    <li>
+                        <a href="Home.html"> 
+                            <i class="fa-solid fa-home "></i>Home 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="About.html"> About </a>
+                    </li>
+                    <li>
+                        <a  href="Menus.html"> Menus </a>
+                    </li>
+                    <li>
+                        <a class="active" href="Contacts.html"> 
+                            <i class="fa-solid fa-envelope"></i>
+                            Contact 
+                        </a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="contact">
+            <h2> Contact us </h2>
+            <p>
+                If your want to make a reservation, please complete this form.
+            </p>
+            <p>
+                Fields with <span>are</span>  required.
+            </p>
+            <form action="formulaire.php" method="post">
+                <div class="information">
+                    <fieldset class="reservation">
+                        <legend class="move-marg"> Reservation </legend>
+                        <label class="content" for="date"> Date </label>
+                        <input type="date" id="date">
+                        <label class="content" for="time"> Time </label>
+                        <input type="time" id="time">
+                        <label class="content" for="guest"> Number of guests </label>
+                        <input type="number" id="guest">
+                    </fieldset>
+                    <fieldset class="details">
+                        <legend class="move-marg">Details</legend>
+                        <label class="content" for="lastname"> Name </label>
+                        <input type="text" id="lastname">
+                        <label class="move-marg" for="email"> Email </label>
+                        <input type="text" id="email">
+                        <label class="content" for="cell"> Telephone </label>
+                        <input type="tel" id="cell">
+                    </fieldset>
+                </div>
+                <fieldset class="request">
+                    <label for="request" class="req-label move-marg"> Further request </label>
+                    <textarea name="reques" id="request"></textarea>
+                </fieldset>                
+                <div class="submit-buton">
+                    <button> Reserve </button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="more-us">
+            <section>
+                <h4> Opening hours </h4>
+                <div class="hours">
+                    <span>Monday: Closed</span>
+                    <span>Tue-Wed: 9am - 10pm</span>
+                    <span>Thu-Fri: 9am - 10pm</span>
+                    <span>Sat-Sun: 5pm - 10pm</span>
+                </div>
+            </section>
+            <section>
+                <h4> Contact </h4>
+                <div class="addres">
+                    <address>
+                        <span>13 Christopher Street</span>
+                        <span>Ney Yorl,</span>
+                        <span>NY 10014-3543</span>
+                    </address>
+                    <a href="tel:+0120008009999">+01 2000 800 9999</a>
+                </div>
+            </section>
+            <section>
+                <h4> Social networks </h4>
+                <div class="social">
+                    <a href="https://www.facebook.com"><span class="fa-brands fa-facebook-f "></span></a>
+                    <a href="https://www.instagram.com"><span class="fa-brands fa-instagram"></span></a>
+                    <a href="https://www.pinterest.com"><span class="fa-brands fa-pinterest-p"></span></a>
+                </div>
+            </section>
+        </div>
+        <div class="copyright">
+            <img src="../instructions/ressources/images/logo-3wa.png" alt="">
+            <p>
+                Cet exercice de <a href="https://www.3wa.fr">3W Academy</a> est mis à disposition <a href="#">pour l'usage personnel des étudiants. Pas de Rediffusion - Attribution - Pas d'Utilisation Commerciale - Pas de Modification - International.</a>
+            </p>
+            <p>
+                Les autorisations au-delà du champ de cette licence peuvent être obtenues auprès de <a href="mailto:contact@3wa.fr">contact@3wa.fr</a>. Les maquettes ont été réalisées par Catherine Denos.
+            </p>
+        </div>
+
+    </footer>
+</body>
+</html>
